@@ -5,6 +5,16 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'harmond';
+  src: url('../fonts/Harmond.otf');
+}
+
+@font-face {
+  font-family: 'magilo';
+  src: url('../fonts/Magilio.ttf');
+}
 /* =======================================================
 *
 * 	Template Style 
@@ -1841,3 +1851,12 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+.our-vision {
+  font-family: 'harmond' !important;
+  font-weight: 400;
+}
+
+.our {
+  font-family: 'harmond' !important;
+  font-weight: 400;
+}
