@@ -1851,8 +1851,13 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+@font-face {
+  font-family: 'PowerGrotesk';
+  src: url('../fonts/PowerGrotesk.woff2');
+}
+
 .our-vision {
-  font-family: 'harmond' !important;
+  font-family: 'PowerGrotesk' !important;
   font-weight: 400;
 }
 
