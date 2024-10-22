@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukit - Where Every Ticket Creates An Ever-Lasting Memory</title>
+    <style>
+        /* CSS styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Work Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background-image: url('https://source.unsplash.com/random/1600x900/?event');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f39c12;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+        }
+
+        .section {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .feature-icon {
+            font-size: 2em;
+            margin-right: 20px;
+            color: #3498db;
+        }
+
+        .footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <img src="https://via.placeholder.com/150x50?text=Bukit+Logo" alt="Bukit Logo" class="logo">
+            <h1>We are Bukit</h1>
+            <p>Where Every Ticket Creates An Ever-Lasting Memory</p>
+            <a href="#" class="btn">Register Now</a>
+        </div>
+    </header>
+
+    <section class="section fade-in">
+        <h2>About Us</h2>
+        <p>Bukit is the one-stop destination that turns events into unforgettable memories. We connect people to the events that inspire, entertain, and leave lasting impressions. Every moment you crave is just a click away at Bukit.</p>
+    </section>
+
+    <section class="section fade-in">
+        <h2>Our Story</h2>
+        <p>Bukit was born from a simple idea: to create something that could connect both entertainers and entertainment lovers in an innovative way. Today, we have set our footprints in India and Singapore, with our sights set on the UK, Europe, and beyond.</p>
+    </section>
+
+    <section class="section fade-in">
+        <h2>What We Do</h2>
+        <div class="feature">
+            <div class="feature-icon">🎫</div>
+            <div>
+                <h3>Simplify Ticketing</h3>
+                <p>We make ticketing easy for every kind of event—from mega concerts to intimate gatherings.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🎭</div>
+            <div>
+                <h3>Help Event Organizers</h3>
+                <p>We assist event organizers in managing and promoting their events with ease.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🤝</div>
+            <div>
+                <h3>Connect Audiences</h3>
+                <p>We bring audiences closer to the experiences they love, whether it's live performances, sports events, or movie premieres.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Bukit. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#" target="_blank">📷</a>
+            <a href="#" target="_blank">👍</a>
+            <a href="#" target="_blank">🔗</a>
+            <a href="#" target="_blank">🐦</a>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Fade-in animation for sections
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Dynamic background image for header
+            const header = document.querySelector('.header');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+                if (currentScrollY > lastScrollY) {
+                    header.style.backgroundPositionY = `${currentScrollY * 0.5}px`;
+                }
+                lastScrollY = currentScrollY;
+            });
+        });
+    </script>
+</body>
+</html>

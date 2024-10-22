@@ -476,7 +476,8 @@ h1, h2, h3, h4, h5, h6, figure {
   position: absolute;
   content: " ";
   width: 1px;
-  background-color: #d4d4d4;
+  /* background-color: #d4d4d4; */
+  background-color: #674ef1;
   left: 50%;
   margin-left: 0px;
 }
@@ -499,6 +500,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .timeline > li > .timeline-panel {
   width: 40%;
   float: left;
+  /* border: 1px solid #d4d4d4; */
   border: 1px solid #d4d4d4;
   padding: 30px;
   position: relative;
@@ -507,6 +509,18 @@ h1, h2, h3, h4, h5, h6, figure {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
+
+.timeline > li > .timeline-panel:hover {
+  background-color: rgb(255, 255, 114);
+  color: black;
+}
+
+.timeline > li > .timeline-panel:hover.timeline-panel:after {
+  background-color: rgb(255, 255, 114);
+  border-right-color: rgb(255, 255, 114);
+  background-color: #fff;
+}
+
 .timeline > li > .timeline-panel:before {
   position: absolute;
   top: 80px;
@@ -1864,4 +1878,81 @@ form label {
 .our {
   font-family: 'harmond' !important;
   font-weight: 400;
+}
+
+.our-story-container {
+  width: 100%;
+  height: 100%;
+  background-color: #674ef1;
+  color: #fff !important;
+  margin-bottom: 0px;
+}
+
+.our-story-container h2,
+.our-story-container p {
+  color: #fff;
+}
+
+.our-story-wrapper {
+  margin-bottom: 10px;
+}
+
+.bukit-image-container {
+  background-color: #674ef1;
+  height: 100px;
+  width: max-content;
+  padding: 10px;
+  border-radius: 10px;
+  display: grid;
+  margin: auto;
+  place-content: center;
+}
+
+.bukit-our-story {
+  display: block;
+  /* width: 100px; */
+  height: 80px;
+}
+
+.timeline-badge {
+  border: 5px solid #674ef1;
+}
+
+.who-we-are {
+  background-color: #ffc107;
+  /* margin: 10px auto; */
+  width: 100%;
+}
+
+.who-we-are-in {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+.who-we-are-in h2 {
+  color: #fff !important;
+}
+
+.who-we-are-in p {
+  color: #fff !important;
+}
+
+.what-make-deifferent {
+  background-color: #674ef1;
+  width: 100%;
+}
+
+.what-make-deifferent-in {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.what-make-deifferent-in h2 {
+  color: #fff;
+}
+
+.what-make-deifferent-in p {
+  color: #fff !important;
 }
