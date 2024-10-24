@@ -1956,3 +1956,17 @@ form label {
 .what-make-deifferent-in p {
   color: #fff !important;
 }
+
+
+@font-face {
+  font-family: 'sk';
+  src: url('../fonts/sk.otf');
+}
+.btn-register {
+  font-family: 'PowerGrotesk';
+  letter-spacing: .1rem;
+}
+
+body {
+  font-family: 'sk' !important;
+}
