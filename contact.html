@@ -6,6 +6,7 @@
     <title>Contact Us - Bukit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
     <link rel="stylesheet" href="./css/styles.css">
     <script>
         tailwind.config = {
@@ -61,6 +62,22 @@
         .delay-300 { transition-delay: 300ms; }
         .delay-400 { transition-delay: 400ms; }
         .delay-500 { transition-delay: 500ms; }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-smooth iframe {
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -133,10 +150,10 @@
 
     <footer class="bg-[#8F00FF] text-white py-8">
         <div class="container mx-auto px-4">
-          <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0">
+          <div class="flex flex-col md:flex-row justify-center items-center">
+            <!-- <div class="mb-4 md:mb-0">
               <p class="text-lg font-medium">To Book Events: <a href="https://www.bukitnow.sg" class="underline hover:text-purple-200 transition-colors duration-300">www.bukitnow.sg</a></p>
-            </div>
+            </div> -->
             <div class="flex space-x-4">
               <a href="#" aria-label="Instagram" class="hover:text-purple-200 transition-colors duration-300">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -217,6 +234,20 @@
     </script>
 
     <script>
+        const lenis = new Lenis();
+
+        // Listen for the scroll event and log the event data
+        lenis.on('scroll', (e) => {
+        console.log(e);
+        });
+
+        // Use requestAnimationFrame to continuously update the scroll
+        function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             // Here you would typically send the form data to your server

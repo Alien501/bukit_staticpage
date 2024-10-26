@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bukit</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./css/styles.css">
     <script>
@@ -61,6 +62,26 @@
         .delay-300 { transition-delay: 300ms; }
         .delay-400 { transition-delay: 400ms; }
         .delay-500 { transition-delay: 500ms; }
+    
+        html.lenis, html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-smooth iframe {
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -109,7 +130,7 @@
             </div>
         </section>
 
-          <section class="mt-[100px] mb-[100px] animate-section dot-container bukit-intro min-h-[500px] p-6 flex items-center justify-center appear-on-scroll">
+          <section class="mt-[100px] mb-[100px] animate-section  bukit-intro min-h-[500px] p-6 flex items-center justify-center appear-on-scroll">
             <div class="p-2 lead-2 text-lg font-normal text-justify">
                 <p class="stagger-item">Bukit, the one-stop destination that turns events into unforgettable memories. We are not just selling tickets for events, we are opening your doors to excitement. We connect people to the events that inspire, entertain, and leave lasting impressions. Whether you are booking a front-row seat for a high-energy concert, reserving tickets for a blockbuster movie, a stand-up comedy, or grabbing a pass for a thrilling sports event—every moment you crave is just a click away at Bukit. </p>
                 <br>
@@ -185,7 +206,7 @@
             </div>
           </section>
 
-          <section id="who-we-are" class="mt-[100px] mb-[100px] dot-container appear-on-scroll hand-containedr min-h-[500px] p-6 flex flex-col items-center justify-center bg-bukit-violet/1 space-y-5">
+          <section id="who-we-are" class="mt-[100px] mb-[100px] appear-on-scroll hand-containedr min-h-[500px] p-6 flex flex-col items-center justify-center bg-bukit-violet/1 space-y-5">
             <h1 class="stagger-item text-4xl font-bold animate__animated animate__fadeInUp">Who We Are?</h1>
             <div class="p-2 lead-2 text-lg font-normal text-justify animate__fadeIn">
                 <p>At our core, Bukit is powered by <b>PASSION</b>—Passion for events, Passion for technology, and Passion for creating connections. We are a team of creators, dreamers, and doers who believe that <b>every event is an experience waiting to happen</b>. Our platform is designed to make sure that, from the moment you discover an event to the second you step through the door, the experience is smooth, exciting, and completely stress-free.</p>
@@ -221,7 +242,7 @@
           </section>
 
 
-          <section class="mt-[100px] mb-[100px] dot-container bukit-intro min-h-[500px] p-6 flex items-center justify-center flex-col space-y-5">
+          <section class="mt-[100px] mb-[100px] bukit-intro min-h-[500px] p-6 flex items-center justify-center flex-col space-y-5">
             <h1 class="text-4xl font-bold">Why Choose Bukit?</h1>
             <div class="p-2 lead-2 text-lg font-normal text-justify">
                 <p>Because when you choose Bukit, you are choosing more than just a ticket—you are choosing to be part of a community that celebrates life’s greatest moments. We impact your life by bringing you closer to the events you love. We use AI technology to understand your interests and customize our suggestions as per your needs. We blend <b>technology</b> and <b>creativity</b> to offer you a platform where exploring and booking events is part of the experience itself. So, whether you’re an organizer creating the next must-see event or an attendee looking for your next adventure, Bukit is here to turn those plans into memories that last a lifetime.</p>
@@ -247,10 +268,10 @@
 
     <footer class="bg-[#8F00FF] text-white py-8">
         <div class="container mx-auto px-4">
-          <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0">
+          <div class="flex flex-col md:flex-row justify-center items-center">
+            <!-- <div class="mb-4 md:mb-0">
               <p class="text-lg font-medium">To Book Events: <a href="https://www.bukitnow.sg" class="underline hover:text-purple-200 transition-colors duration-300">www.bukitnow.sg</a></p>
-            </div>
+            </div> -->
             <div class="flex space-x-4">
               <a href="#" aria-label="Instagram" class="hover:text-purple-200 transition-colors duration-300">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -281,6 +302,22 @@
       </footer>
       
       <script>
+        // Initialize Lenis
+        const lenis = new Lenis();
+
+        // Listen for the scroll event and log the event data
+        lenis.on('scroll', (e) => {
+        console.log(e);
+        });
+
+        // Use requestAnimationFrame to continuously update the scroll
+        function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
         const hamMenu = document.querySelector('input[type="checkbox"]');
         const menuContainer = document.querySelector('.menu-container');
 
