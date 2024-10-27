@@ -40,79 +40,60 @@
   }
   
 
-.glow-btn {
+.glass-btn {
     position: relative;
     padding: 10px 20px;
     border-radius: 7px;
-    border: 1px solid var(--color-violet);
+    border: 1px solid #ffffff35;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 2px;
-    background: transparent;
-    color: #fff;
+    color: #fff !important;
+    background-color: #ffffff0e;
+    backdrop-filter: blur(10px);
+    transition: .3s ease;
     overflow: hidden;
-    box-shadow: 0 0 0 0 transparent;
-    -webkit-transition: all 0.2s ease-in;
-    -moz-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
   }
-  
-  .glow-btn:hover {
-    background: var(--color-violet);
-    box-shadow: 0 0 30px 5px rgba(239, 8, 255, 0.4);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-  }
-  
-  .glow-btn:hover::before {
-    -webkit-animation: sh02 0.5s 0s linear;
-    -moz-animation: sh02 0.5s 0s linear;
-    animation: sh02 0.5s 0s linear;
-  }
-  
-  .glow-btn::before {
+
+  .glass-btn::after {
     content: '';
-    display: block;
-    width: 0px;
-    height: 86%;
+    width: 105%;
+    height: 110%;
+    background-color: #ffffff1d;
     position: absolute;
-    top: 7%;
-    left: 0%;
-    opacity: 0;
-    background: #fff;
-    box-shadow: 0 0 50px 30px #fff;
-    -webkit-transform: skewX(-20deg);
-    -moz-transform: skewX(-20deg);
-    -ms-transform: skewX(-20deg);
-    -o-transform: skewX(-20deg);
-    transform: skewX(-20deg);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px rgb(255, 255, 255, .1);
+    border-radius: 10px;
+    filter: blur(10px);
   }
   
-  @keyframes sh02 {
-    from {
-      opacity: 0;
-      left: 0%;
-    }
-  
-    50% {
-      opacity: 1;
-    }
-  
-    to {
-      opacity: 0;
-      left: 100%;
-    }
+  .glass-btn:hover .glass-btn::after {
+    box-shadow: 0px 0px 20px rgb(255, 255, 255, .2);
   }
   
-  .glow-btn:active {
-    box-shadow: 0 0 0 0 transparent;
-    -webkit-transition: box-shadow 0.2s ease-in;
-    -moz-transition: box-shadow 0.2s ease-in;
-    transition: box-shadow 0.2s ease-in;
+  .glass-btn::before {
+    content: '';
+    width: 10px;
+    height: 100%;
+    background-color: #ffffff2b;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(5px);
+    animation: moveShine 5s ease  infinite  ;
   }
-  
+
+  @keyframes moveShine {
+    0% {
+      transform: translate(-200px, -50%);
+    } 100% {
+      transform: translate(200px, -50%);
+    }
+  }
+
 .dot-container {
     background-color: #ffffff;
     background-image: radial-gradient(rgba(163, 109, 255, 0.3) 2px, transparent 0);
