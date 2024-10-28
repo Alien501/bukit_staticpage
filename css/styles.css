@@ -225,17 +225,18 @@
     width: 1.1rem;
     height: 1.1rem;
     background-color: var(--primary);
-  
+    flex-shrink: 0;
     border-radius: 50%;
   }
+
   
   .card .card__list .card__list_item .check .check_svg {
     width: 0.75rem;
     height: 0.75rem;
-  
+    flex-shrink: 0;
     fill: var(--black);
   }
-  
+
   .card .card__list .card__list_item .list_text {
     font-size: 0.75rem;
     color: var(--white);
@@ -448,6 +449,8 @@ section div p {
   align-items: center;
   color: var(--color-violet);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
   transition: .3s ease-in-out;
 }
 
