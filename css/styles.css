@@ -449,6 +449,8 @@ section div p {
   align-items: center;
   color: var(--color-violet);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
   transition: .3s ease-in-out;
 }
 
