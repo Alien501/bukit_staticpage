@@ -108,8 +108,7 @@
     </div>
 
     <main class="min-h-screen overflow-hidden">
-
-        <section class="relative h-screen overflow-hidden bg-black">
+        <section id="#hero" class="relative h-screen overflow-hidden bg-black">
             <div class="absolute inset-0 z-0 h-full w-full">
                 <img src="./assets/images/bg.jpg" alt="Background" class="object-cover block w-full h-full filter blur-md animate__animated animate__fadeIn">
             </div>
@@ -130,7 +129,8 @@
             </div>
         </section>
 
-          <section class="mt-[100px] mb-[100px] animate-section  bukit-intro min-h-[500px] p-6 flex items-center justify-center appear-on-scroll">
+          <section class="mt-[25px] mb-[25px] animate-section  bukit-intro min-h-[400px] p-6 flex flex-col items-center justify-center appear-on-scroll">
+            <h1 class="text-4xl font-bold">About Us</h1>
             <div class="p-2 lead-2 text-lg font-normal text-justify">
                 <p class="stagger-item">Bukit, the one-stop destination that turns events into unforgettable memories. We are not just selling tickets for events, we are opening your doors to excitement. We connect people to the events that inspire, entertain, and leave lasting impressions. Whether you are booking a front-row seat for a high-energy concert, reserving tickets for a blockbuster movie, a stand-up comedy, or grabbing a pass for a thrilling sports event—every moment you crave is just a click away at Bukit. </p>
                 <br>
@@ -139,7 +139,7 @@
             </div>
           </section>
 
-          <section id="why-pre-register" class="mt-[100px] mb-[100px] min-h-[500px] p-6 flex items-center justify-center flex-col space-y-5 appear-on-scroll">
+          <section id="why-pre-register" class="mt-[25px] mb-[25px] min-h-[400px] p-6 flex items-center justify-center flex-col space-y-5 appear-on-scroll">
             <h1 class="text-4xl font-bold">Pre-Register</h1>
             <div>
                 <div class="card">
@@ -206,21 +206,21 @@
             </div>
           </section>
 
-          <section id="who-we-are" class="mt-[100px] mb-[100px] appear-on-scroll hand-containedr min-h-[500px] p-6 flex flex-col items-center justify-center bg-bukit-violet/1 space-y-5">
+          <section id="who-we-are" class="mt-[25px] mb-[25px] appear-on-scroll hand-containedr min-h-[400px] p-6 flex flex-col items-center justify-center bg-bukit-violet/1 space-y-5">
             <h1 class="stagger-item text-4xl font-bold animate__animated animate__fadeInUp">Who We Are?</h1>
             <div class="p-2 lead-2 text-lg font-normal text-justify animate__fadeIn">
                 <p>At our core, Bukit is powered by <b>PASSION</b>—Passion for events, Passion for technology, and Passion for creating connections. We are a team of creators, dreamers, and doers who believe that <b>every event is an experience waiting to happen</b>. Our platform is designed to make sure that, from the moment you discover an event to the second you step through the door, the experience is smooth, exciting, and completely stress-free.</p>
             </div>
           </section>
 
-          <section id="what-we-do" class="mt-[100px] mb-[100px] min-h-[500px] p-6 flex flex-col items-center justify-center space-y-5">
-            <h1 class="text-4xl font-bold">What We Do?</h1>
+          <section id="what-we-do" class="mt-[25px] mb-[25px] min-h-[400px] p-6 flex flex-col items-center justify-center space-y-5">
+            <h1 class="text-4xl font-bold text-center">What We Do?</h1>
             <div class="what p-2 lead-2 text-lg font-normal text-justify">
                 <div>
                     <!-- <img src="./assets/images/who.png" alt="" class="what-img rounded-lg"/>  -->
                 </div>
-                <br>
-                <p class="text-bold text-center">At Bukit, we have made it our mission to</p>
+                <!-- <br> -->
+                <p class="text-bold text-center block mx-auto">At Bukit, we have made it our mission to</p>
                 <br>
                 <div class="what-cards flex flex-row justify-evenly flex-wrap items-center">
                     <div class="cards red p-2">
@@ -237,12 +237,12 @@
                     </div>
                 </div>
                 <br>
-                <p class="text-center">We connect organizers with audiences and make ticketing stress-free, so the focus stays where it belongs—on creating amazing experiences.</p>
+                <p class="text-center block mx-auto">We connect organizers with audiences and make ticketing stress-free, so the focus stays where it belongs—on creating amazing experiences.</p>
             </div>
           </section>
 
 
-          <section class="mt-[100px] mb-[100px] bukit-intro min-h-[500px] p-6 flex items-center justify-center flex-col space-y-5">
+          <section class="mt-[25px] mb-[25px] bukit-intro min-h-[400px] p-6 flex items-center justify-center flex-col space-y-5">
             <h1 class="text-4xl font-bold">Why Choose Bukit?</h1>
             <div class="p-2 lead-2 text-lg font-normal text-justify">
                 <p>Because when you choose Bukit, you are choosing more than just a ticket—you are choosing to be part of a community that celebrates life’s greatest moments. We impact your life by bringing you closer to the events you love. We use AI technology to understand your interests and customize our suggestions as per your needs. We blend <b>technology</b> and <b>creativity</b> to offer you a platform where exploring and booking events is part of the experience itself. So, whether you’re an organizer creating the next must-see event or an attendee looking for your next adventure, Bukit is here to turn those plans into memories that last a lifetime.</p>
@@ -252,7 +252,7 @@
             </div>
           </section>
 
-          <section class="mt-[100px] mb-[100px] bukit-intro min-h-[500px] p-6 flex items-center justify-center flex-col space-y-5">
+          <section class="mt-[25px] mb-[25px] bukit-intro min-h-[400px] p-6 flex items-center justify-center flex-col space-y-5">
             <h1 class="text-4xl font-bold">What We Believe?</h1>
             <span>The Magic of Moments</span>
             <div class="p-2 lead-2 text-lg font-normal text-justify">
@@ -265,6 +265,12 @@
             </div>
           </section>
     </main>
+
+    <div class="fab-container">
+        <a href="#hero" class="up-button">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.14645 2.14645C7.34171 1.95118 7.65829 1.95118 7.85355 2.14645L11.8536 6.14645C12.0488 6.34171 12.0488 6.65829 11.8536 6.85355C11.6583 7.04882 11.3417 7.04882 11.1464 6.85355L8 3.70711L8 12.5C8 12.7761 7.77614 13 7.5 13C7.22386 13 7 12.7761 7 12.5L7 3.70711L3.85355 6.85355C3.65829 7.04882 3.34171 7.04882 3.14645 6.85355C2.95118 6.65829 2.95118 6.34171 3.14645 6.14645L7.14645 2.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </a>
+    </div>
 
     <footer class="bg-[#8F00FF] text-white py-8">
         <div class="container mx-auto px-4">

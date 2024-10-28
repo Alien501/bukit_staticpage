@@ -378,7 +378,7 @@
 
 h1 {
     text-align: center !important;
-    font-family: 'Magilo';
+    /* font-family: 'Magilo'; */
     color: #8F00FF;
 }
 
@@ -406,8 +406,17 @@ p {
   src: url('../assets/fonts/PowerGrotesk.woff2');
 }
 
+@font-face {
+  font-family: 'raleway';
+  src: url('../assets/fonts/Raleway.ttf');
+}
+
+@font-face {
+  font-family: 'Sen';
+  src: url('../assets/fonts/Sen.ttf');
+}
+
 b {
-  font-family: 'Power';
   font-size: 1rem;
 }
 
@@ -415,8 +424,14 @@ b {
   scroll-behavior: smooth;
 }
 
+h1 {
+  font-family: 'raleway' !important;
+  font-weight: 500;
+}
+
 section div p {
   max-width: 700px;
+  font-family: 'Sen' !important;
 }
 
 .menu-container {
@@ -442,7 +457,7 @@ section div p {
 
 .menu-container div a {
   display: block;
-  font-family: 'Magilo';
+  font-family: 'Sen';
   text-align: center;
   font-size: 2rem;
   text-decoration: none;
@@ -452,4 +467,24 @@ section div p {
 
 .menu-container div a:hover {
   color: #8F00FF;
+}
+
+.fab-container {
+  position: fixed;
+  z-index: 100;
+  right: 20px;
+  bottom: 50px;
+  background-color: #8F00FF;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.up-button svg {
+  display: block;
+  width: 30px;
+  height: 30px;
 }
