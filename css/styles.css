@@ -225,17 +225,18 @@
     width: 1.1rem;
     height: 1.1rem;
     background-color: var(--primary);
-  
+    flex-shrink: 0;
     border-radius: 50%;
   }
+
   
   .card .card__list .card__list_item .check .check_svg {
     width: 0.75rem;
     height: 0.75rem;
-  
+    flex-shrink: 0;
     fill: var(--black);
   }
-  
+
   .card .card__list .card__list_item .list_text {
     font-size: 0.75rem;
     color: var(--white);
