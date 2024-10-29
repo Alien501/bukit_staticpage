@@ -1,5 +1,5 @@
 :root {
-    --color-violet: #8F00FF;
+    --color-violet: #7c1ac2;
 }
 
 
@@ -322,7 +322,7 @@
   }
 
   div p b {
-    color: #8F00FF;
+    color: #7c1ac2;
 }
 
 /* From Uiverse.io by kamehame-ha */ 
@@ -333,15 +333,15 @@
   }
   
   .what-cards .red {
-    background-color: #8F00FF;
+    background-color: #7c1ac2;
   }
   
   .what-cards .blue {
-    background-color: #8F00FF;
+    background-color: #7c1ac2;
   }
   
   .what-cards .green {
-    background-color: #8F00FF;
+    background-color: #7c1ac2;
   }
   
   .what-cards .cards {
@@ -380,7 +380,7 @@
 h1 {
     text-align: center !important;
     /* font-family: 'Magilo'; */
-    color: #8F00FF;
+    color: #7c1ac2;
 }
 
 p {
@@ -417,6 +417,16 @@ p {
   src: url('../assets/fonts/Sen.ttf');
 }
 
+@font-face {
+  font-family: 'Prestige';
+  src: url('../assets/fonts/Prestage\ Regular.otf');
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../assets/fonts/Lora-Regular.ttf');
+}
+
 b {
   font-size: 1rem;
 }
@@ -426,8 +436,8 @@ b {
 }
 
 h1 {
-  font-family: 'raleway' !important;
-  font-weight: 500;
+  font-family: 'Lora' !important;
+  font-weight: bold;
 }
 
 section div p {
@@ -469,7 +479,7 @@ section div p {
 }
 
 .menu-container div a:hover {
-  color: #8F00FF;
+  color: #7c1ac2;
 }
 
 .fab-container {
@@ -477,17 +487,25 @@ section div p {
   z-index: 100;
   right: 20px;
   bottom: 50px;
-  background-color: #8F00FF;
+  background-color: #7c1ac2;
   color: #fff;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   display: grid;
   place-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .up-button svg {
   display: block;
   width: 30px;
   height: 30px;
+}
+
+.fab-container.visible {
+  opacity: 1;
+  visibility: visible;
 }

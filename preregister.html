@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Bukit</title>
+    <title>Bukit - Pre-Register</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./css/styles.css">
     <script>
         tailwind.config = {
@@ -62,6 +62,10 @@
         .delay-300 { transition-delay: 300ms; }
         .delay-400 { transition-delay: 400ms; }
         .delay-500 { transition-delay: 500ms; }
+    
+        html.lenis, html.lenis body {
+            height: auto;
+        }
 
         .lenis.lenis-smooth {
             scroll-behavior: auto !important;
@@ -79,13 +83,18 @@
             pointer-events: none;
         }
     </style>
+        <script async src="https://tally.so/widgets/embed.js"></script>
+        <style type="text/css">
+          html { margin: 0; height: 100%; overflow: hidden; }
+          iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 0; }
+        </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body>
     <nav class="h-[60px] z-50 fixed left-0 top-0 right-0 flex justify-between items-center bg-black/10 overflow-hidden p-2 backdrop-blur-sm bg-black/60 animate__animated animate__fadeInDown">
         <div class="logo-wrapper w-[80px]">
-            <a href="./index.html">
-                <img src="./assets/images/logo.png" alt="Bukit Logo" class="nav-logo">
-            </a>
+          <a href="./index.html">
+            <img src="./assets/images/logo.png" alt="Bukit Logo" class="nav-logo">
+        </a>
         </div>
         <div class="ham-container">
             <label class="hamburger animate__animated animate__fadeIn animate__delay-medium">
@@ -105,50 +114,17 @@
         </div>
     </div>
 
-    <div class="container mx-auto px-4 py-12 mt-[70px]">
-        <h1 class="text-4xl font-bold text-primary mb-8 text-center">Let's Connect!</h1>
-        
-        <div class="grid md:grid-cols-2 gap-12">
-            <div>
-                <p class="mb-6">We're here to help you make your event journey smooth and memorable. Whether you're looking to book tickets, manage an event, or simply have a question, the Bukit team is ready to assist. Reach out to us, and let's create amazing experiences together!</p>
-                
-                <h2 class="text-2xl font-semibold text-primary mb-4">Our Story – It All Started with a Simple Idea!</h2>
-                <p class="mb-4">Bukit was not born in an office boardroom or at a high-level strategy meeting. It started with a group of friends sitting in a cafe, casually brainstorming a desire to create something that could connect both entertainers and entertain lovers in an innovative way.</p>
-                <p class="mb-4">We explored countless ideas, but ultimately, we saw a gap in the event ticketing platforms—too many clicks, missed opportunities and a lot of frustration for both event-goers and organizers.</p>
-                <p class="mb-4">And that's when the idea for Bukit was born. A vision to bring simplicity and joy to event ticketing. Today, we have set our footprints in India and Singapore. But this is just a beginning. Our wings are ready to spread, and we are keeping our keen-eye on the UK, Europe, and beyond.</p>
-            </div>
-            
-            <div>
-                <form id="contactForm" class="bg-white shadow-lg rounded-lg p-8">
-                    <div class="mb-6">
-                        <label for="firstName" class="block text-gray-700 text-sm font-bold mb-2">First Name</label>
-                        <input type="text" id="firstName" name="firstName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                    </div>
-                    <div class="mb-6">
-                        <label for="lastName" class="block text-gray-700 text-sm font-bold mb-2">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                    </div>
-                    <div class="mb-6">
-                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                    </div>
-                    <div class="mb-6">
-                        <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Subject</label>
-                        <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                    </div>
-                    <div class="mb-6">
-                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                        <textarea id="message" name="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <button type="submit" class="bg-white hover:bg-purple-700 text-bukit-violet font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:text-white transition duration-300">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+    <div class="page-content-cotnainer min-h-screen">
+        <iframe data-tally-src="https://tally.so/r/3l7o2o?transparentBackground=1" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="Bukit - Registration"></iframe>
     </div>
+
+    <div class="fab-container">
+        <a href="#hero" class="up-button">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.14645 2.14645C7.34171 1.95118 7.65829 1.95118 7.85355 2.14645L11.8536 6.14645C12.0488 6.34171 12.0488 6.65829 11.8536 6.85355C11.6583 7.04882 11.3417 7.04882 11.1464 6.85355L8 3.70711L8 12.5C8 12.7761 7.77614 13 7.5 13C7.22386 13 7 12.7761 7 12.5L7 3.70711L3.85355 6.85355C3.65829 7.04882 3.34171 7.04882 3.14645 6.85355C2.95118 6.65829 2.95118 6.34171 3.14645 6.14645L7.14645 2.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </a>
+    </div>
+
+
 
     <footer class="bg-[#8F00FF] text-white py-8">
         <div class="container mx-auto px-4">
@@ -186,6 +162,19 @@
       </footer>
       
       <script>
+        const lenis = new Lenis();
+
+        lenis.on('scroll', (e) => {
+        console.log(e);
+        });
+
+        function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
         const hamMenu = document.querySelector('input[type="checkbox"]');
         const menuContainer = document.querySelector('.menu-container');
 
@@ -201,18 +190,14 @@
             function handleIntersection(entries, observer) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Animate the section container
                         entry.target.classList.add('visible');
-                        
-                        // Find and animate all stagger items within the section
                         const staggerItems = entry.target.querySelectorAll('.stagger-item');
                         staggerItems.forEach((item, index) => {
                             setTimeout(() => {
                                 item.classList.add('visible');
-                            }, index * 200); // 200ms stagger between items
+                            }, index * 200);
                         });
 
-                        // Optional: Unobserve after animation
                         observer.unobserve(entry.target);
                     }
                 });
@@ -220,12 +205,10 @@
 
             const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-            // Observe all sections that should animate
             document.querySelectorAll('.animate-section').forEach(section => {
                 observer.observe(section);
             });
 
-            // Optional: Add scroll-linked animations for parallel effects
             window.addEventListener('scroll', () => {
                 const scrolled = window.scrollY;
                 document.querySelectorAll('.scroll-parallel').forEach(element => {
@@ -233,31 +216,8 @@
                     element.style.transform = `translateY(${scrolled * speed}px)`;
                 });
             });
-    </script>
 
-    <script>
-        const lenis = new Lenis();
-
-        // Listen for the scroll event and log the event data
-        lenis.on('scroll', (e) => {
-        console.log(e);
-        });
-
-        // Use requestAnimationFrame to continuously update the scroll
-        function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-        }
-
-        requestAnimationFrame(raf);
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Here you would typically send the form data to your server
-            alert('Thank you for your message. We will get back to you soon!');
-            this.reset();
-        });
-
-        window.addEventListener("scroll", function () {
+            window.addEventListener("scroll", function () {
         const fab = document.querySelector(".fab-container");
         if (window.scrollY > 200) { // Show when scrolled down 200px
           fab.classList.add("visible");
