@@ -272,7 +272,7 @@
         </a>
     </div>
 
-    <footer class="bg-[#8F00FF] text-white py-8">
+    <footer class="bg-[#7c1ac2] text-white py-8">
         <div class="container mx-auto px-4">
           <div class="flex flex-col md:flex-row justify-center items-center">
             <!-- <div class="mb-4 md:mb-0">
@@ -370,6 +370,15 @@
                     const speed = element.dataset.speed || 0.5;
                     element.style.transform = `translateY(${scrolled * speed}px)`;
                 });
+            });
+
+            window.addEventListener("scroll", function () {
+                const fab = document.querySelector(".fab-container");
+                if (window.scrollY > 200) { // Show when scrolled down 200px
+                fab.classList.add("visible");
+                } else {
+                fab.classList.remove("visible");
+                }
             });
     </script>
 </body>
