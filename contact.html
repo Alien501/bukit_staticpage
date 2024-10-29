@@ -1,216 +1,259 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Bukit</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bukit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
+    <link rel="stylesheet" href="./css/styles.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'bukit-violet': '#8F00FF',
+              },
+              fonts: {
+                'power': 'Power'
+              }
+            }
+          }
+        }
+      </script>
+    <style>
+        .section-title {
+            @apply text-4xl font-bold mb-6 opacity-0;
+        }
+        
+        .section-subtitle {
+            @apply text-xl font-medium mb-4 text-gray-700 opacity-0;
+        }
+        
+        .section-text {
+            @apply text-lg text-gray-600 leading-relaxed opacity-0;
+        }
 
- 
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+        .animate-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
 
-	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+        .animate-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
 
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
 
-	</head>
-	<body>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-2">
-					<div id="fh5co-logo">
-						<a href="index.html">
-							<img src="images/logo.png" alt="" style="height: 25px;">
-						</a>
-					</div>
-				</div>
-				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-					
-						<li class="active"><a href="contact.html">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/bg.jpg);">
-		<div class="overlay"></div>
-		<div class="fh5co-container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<div class="display-t">
-						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Contact Us</h1>
-							<h2>Got questions or need assistance? Reach out to us, and we're here to help!</h2>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
 
-	
-	<div class="fh5co-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-md-push-6 animate-box">
-					<h3>Get In Touch</h3>
-					<form action="https://formsubmit.co/swayamsaravana@gmail.com" method="POST" />
-						<div class="row form-group">
-							<div class="col-md-6">
-								<label for="fname">First Name</label>
-								<input type="text" id="fname" class="form-control" placeholder="Your firstname">
-							</div>
-							<div class="col-md-6">
-								<label for="lname">Last Name</label>
-								<input type="text" id="lname" class="form-control" placeholder="Your lastname">
-							</div>
-						</div>
+        .lenis.lenis-smooth iframe {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    <nav class="h-[60px] z-50 fixed left-0 top-0 right-0 flex justify-between items-center bg-black/10 overflow-hidden p-2 backdrop-blur-sm bg-black/60 animate__animated animate__fadeInDown">
+        <div class="logo-wrapper w-[80px]">
+            <img src="./assets/images/logo.png" alt="Bukit Logo" class="nav-logo">
+        </div>
+        <div class="ham-container">
+            <label class="hamburger animate__animated animate__fadeIn animate__delay-medium">
+                <input type="checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+        </div>
+    </nav>
 
-						<div class="row form-group">
-							<div class="col-md-12">
-								<label for="email">Email</label>
-								<input type="text" id="email" class="form-control" placeholder="Your email address">
-							</div>
-						</div>
+    <div class="menu-container">
+        <div>
+            <a href="./index.html">Home</a>
+            <a href="./contact.html">Contact</a>
+        </div>
+    </div>
 
-						<div class="row form-group">
-							<div class="col-md-12">
-								<label for="subject">Subject</label>
-								<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
-							</div>
-						</div>
+    <div class="container mx-auto px-4 py-12 mt-[70px]">
+        <h1 class="text-4xl font-bold text-primary mb-8 text-center">Let's Connect!</h1>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <p class="mb-6">We're here to help you make your event journey smooth and memorable. Whether you're looking to book tickets, manage an event, or simply have a question, the Bukit team is ready to assist. Reach out to us, and let's create amazing experiences together!</p>
+                
+                <h2 class="text-2xl font-semibold text-primary mb-4">Our Story – It All Started with a Simple Idea!</h2>
+                <p class="mb-4">Bukit was not born in an office boardroom or at a high-level strategy meeting. It started with a group of friends sitting in a cafe, casually brainstorming a desire to create something that could connect both entertainers and entertain lovers in an innovative way.</p>
+                <p class="mb-4">We explored countless ideas, but ultimately, we saw a gap in the event ticketing platforms—too many clicks, missed opportunities and a lot of frustration for both event-goers and organizers.</p>
+                <p class="mb-4">And that's when the idea for Bukit was born. A vision to bring simplicity and joy to event ticketing. Today, we have set our footprints in India and Singapore. But this is just a beginning. Our wings are ready to spread, and we are keeping our keen-eye on the UK, Europe, and beyond.</p>
+            </div>
+            
+            <div>
+                <form action="https://formsubmit.co/bukit1037@gmail.com" method="POST" id="contactForm" class="bg-white shadow-lg rounded-lg p-8">
+                    <!-- FormSubmit Hidden Fields -->
+                    
+                
+                    <div class="mb-6">
+                        <label for="firstName" class="block text-gray-700 text-sm font-bold mb-2">First Name</label>
+                        <input type="text" id="firstName" name="firstName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="lastName" class="block text-gray-700 text-sm font-bold mb-2">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button type="submit" class="bg-white hover:bg-purple-700 text-bukit-violet font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:text-white transition duration-300">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+                
+            </div>
+            
 
-						<div class="row form-group">
-							<div class="col-md-12">
-								<label for="message">Message</label>
-								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Write us something"></textarea>
-							</div>
-						</div>
-						<div class="form-group">
-							<input type="submit" value="Send Message" class="btn btn-primary">
-						</div>
+    <footer class="bg-[#8F00FF] text-white py-8">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-center items-center">
+            <!-- <div class="mb-4 md:mb-0">
+              <p class="text-lg font-medium">To Book Events: <a href="https://www.bukitnow.sg" class="underline hover:text-purple-200 transition-colors duration-300">www.bukitnow.sg</a></p>
+            </div> -->
+            <div class="flex space-x-4">
+              <a href="#" aria-label="Instagram" class="hover:text-purple-200 transition-colors duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" aria-label="Facebook" class="hover:text-purple-200 transition-colors duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" aria-label="LinkedIn" class="hover:text-purple-200 transition-colors duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter" class="hover:text-purple-200 transition-colors duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <p>&copy; 2024 Bukit. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+      
+      <script>
+        const hamMenu = document.querySelector('input[type="checkbox"]');
+        const menuContainer = document.querySelector('.menu-container');
 
-					</form>		
-				</div>
-				<br><br>
-				<div class="col-md-5 col-md-pull-5 animate-box">
-					
-					<div class="fh5co-contact-info">
-						<h3>Contact Information</h3>
-						<ul>
-							<li class="address" style="color: #674ef1">Singapore <br> </li>
-							<li class="phone"><a href="tel://1234567920">+91 8838023321</a></li>
-							<li class="email"><a href="mailto:info@yoursite.com">contact@bukit.com</a></li>
-							<li class="url"><a href="https://www.bukitnow.sg">www.bukitnow.sg</a></li>
-						</ul>
-					</div>
+        hamMenu.addEventListener('click', () => {
+            menuContainer.classList.toggle('active')    
+        })
+        
+             const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-				</div>
-			</div>
-			
-		</div>
-	</div>
+            function handleIntersection(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animate the section container
+                        entry.target.classList.add('visible');
+                        
+                        // Find and animate all stagger items within the section
+                        const staggerItems = entry.target.querySelectorAll('.stagger-item');
+                        staggerItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.classList.add('visible');
+                            }, index * 200); // 200ms stagger between items
+                        });
 
-	
+                        // Optional: Unobserve after animation
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }
 
-	<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
+            const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2024 Bukit. All Rights Reserved.</small> 
-					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-instagram"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
+            // Observe all sections that should animate
+            document.querySelectorAll('.animate-section').forEach(section => {
+                observer.observe(section);
+            });
 
-		</div>
-	</footer>
-	</div>
+            // Optional: Add scroll-linked animations for parallel effects
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                document.querySelectorAll('.scroll-parallel').forEach(element => {
+                    const speed = element.dataset.speed || 0.5;
+                    element.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+    </script>
 
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
-	
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
+    <script>
+        const lenis = new Lenis();
 
-	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
+        // Listen for the scroll event and log the event data
+        lenis.on('scroll', (e) => {
+        console.log(e);
+        });
 
-	<!-- Main -->
-	<script src="js/main.js"></script>
+        // Use requestAnimationFrame to continuously update the scroll
+        function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+        }
 
-	</body>
+        requestAnimationFrame(raf);
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your message. We will get back to you soon!');
+            this.reset();
+        });
+    </script>
+</body>
 </html>
-

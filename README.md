@@ -1,1 +1,0 @@
-# bukit_staticpage

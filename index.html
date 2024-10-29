@@ -1,182 +1,376 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title> Bukit</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'bukit-violet': '#8F00FF',
+              },
+              fonts: {
+                'power': 'Power'
+              }
+            }
+          }
+        }
+      </script>
+    <style>
+        .section-title {
+            @apply text-4xl font-bold mb-6 opacity-0;
+        }
+        
+        .section-subtitle {
+            @apply text-xl font-medium mb-4 text-gray-700 opacity-0;
+        }
+        
+        .section-text {
+            @apply text-lg text-gray-600 leading-relaxed opacity-0;
+        }
 
-	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+        .animate-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
 
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+        .animate-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
 
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-	
-	<!-- Custom CSS for rounded image -->
-	<style>
-		.rounded-image {
-			width: 200px;
-			height: auto;
-			border-radius: 15px; /* Adjust for more or less roundness */
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
-			margin-bottom: 15px; /* Spacing between image and button */
-		}
-	</style>
-	</head>
-	<body>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-2">
-					<div id="fh5co-logo">
-						<a href="index.html">
-							<img src="images/logo.png" alt="" style="height: 25px;">
-						</a>
-					</div>
-				</div>
-				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+    
+        html.lenis, html.lenis body {
+            height: auto;
+        }
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/bg.jpg);" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<div class="display-t">
-						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<br>
-							<h1>We are Bukit</h1>
-							<h2>Explore the Extraordinary, Make Memories That Last</h2>
-							
-							<!-- Add rounded image here -->
-							<img src="images/vj.jpeg" alt="Register" style="height: 300px; width: 300px;" class="rounded-image">
-							<br><br>
-							<p><a href="form.html" class="btn btn-default btn-sm">Register Now</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
 
-	<div id="fh5co-couple">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>About Us</h2>
-					<h3>We are Bukit. Explore the Extraordinary, Make Memories That Last</h3>
-					<p>Welcome to Bukit, your one-stop destination for discovering and booking the best events, concerts, and activities in your city. Whether you're looking for exciting music festivals, thrilling sports events, or a place to book your next turf game, Bukit has got you covered. Our platform connects you with a wide range of events in both Singapore and Tamil Nadu, offering an effortless booking experience right at your fingertips.
-						<br><br>
-						At Bukit, we believe that memorable experiences should be easy to find and book. Our mission is to simplify the process of finding events and activities, making it more convenient for everyone. With an intuitive interface and a constantly updated list of events, you can explore, book, and enjoy everything your city has to offer.
-						Join us at Bukit, and let’s turn every moment into a memorable one. Discover the pulse of your city and never miss out on the fun!</p>
-				</div>
-			</div>
-		</div>
-	</div>
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
 
-	<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2024 Bukit. All Rights Reserved.</small> 
-					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-instagram"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	</div>
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
 
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
-	
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
-	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<!-- SimplyCountdown -->
-	<script src="js/simplyCountdown.js"></script>
-	<!-- Main -->
-	<script src="js/main.js"></script>
+        .lenis.lenis-smooth iframe {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="h-[60px] z-50 fixed left-0 top-0 right-0 flex justify-between items-center bg-black/10 overflow-hidden p-2 backdrop-blur-sm bg-black/60 animate__animated animate__fadeInDown">
+        <div class="logo-wrapper w-[80px]">
+            <img src="./assets/images/white.png" alt="Bukit Logo" class="nav-logo">
+        </div>
+        <div class="ham-container">
+            <label class="hamburger animate__animated animate__fadeIn animate__delay-medium">
+                <input type="checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+        </div>
+    </nav>
 
-	<script>
-		var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+    <div class="menu-container">
+        <div>
+            <a href="./index.html">Home</a>
+            <a href="./contact.html">Contact</a>
+        </div>
+    </div>
 
-		// default example
-		simplyCountdown('.simply-countdown-one', {
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate()
-		});
+    <main class="min-h-screen overflow-hidden">
+        <section id="hero" class="relative h-screen overflow-hidden bg-black">
+            <div class="absolute inset-0 z-0 h-full w-full">
+                <img src="./assets/images/bg.jpg" alt="Background" class="object-cover block w-full h-full filter blur-md animate__animated animate__fadeIn">
+            </div>
+            <div class="absolute inset-0 z-10 bg-black/50 backdrop-filter backdrop-blur-md"></div>
+            <div class="relative z-20 flex items-center justify-center h-full">
+                <div class="p-8 rounded-lg text-center max-w-md">
+                    <div class="hero-text-container mb-6 animate__animated animate__fadeInUp">
+                        <h1 class="text-4xl text-white mb-2">We are Bukit</h1>
+                        <p class="text-sm text-white/80">Where Every Ticket Creates An Ever-Lasting Memory</p>
+                    </div>
+                    <div class="mb-6 animate__animated animate__fadeInUp animate__delay-short">
+                        <img src="./assets/images/vj.jpeg" alt="Event image" class="w-full aspect-square object-cover rounded-md">
+                    </div>
+                    <a href="form.html" class="glass-btn animate__animated animate__fadeInUp animate__delay-medium">
+                        Register now
+                    </a>
+                </div>
+            </div>
+        </section>
 
-		// jQuery example
-		$('#simply-countdown-losange').simplyCountdown({
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate(),
-			enableUtc: false
-		});
-	</script>
+          <section class="mt-[25px] mb-[25px] animate-section  bukit-intro min-h-[400px] p-6 flex flex-col items-center justify-center appear-on-scroll">
+            <h1 class="text-4xl font-bold">About Us</h1>
+            <div class="p-2 lead-2 text-lg font-normal text-justify">
+                <p class="stagger-item">Bukit, the one-stop destination that turns events into unforgettable memories. We are not just selling tickets for events, we are opening your doors to excitement. We connect people to the events that inspire, entertain, and leave lasting impressions. Whether you are booking a front-row seat for a high-energy concert, reserving tickets for a blockbuster movie, a stand-up comedy, or grabbing a pass for a thrilling sports event—every moment you crave is just a click away at Bukit. </p>
+                <br>
+                <p class="stagger-item delay-200">It all started with three old friends from different time zones, each bringing unique expertise, who wanted to make something big in the entertainment industry.
+                </p>
+            </div>
+          </section>
 
-	</body>
+          <section id="why-pre-register" class="mt-[25px] mb-[25px] min-h-[400px] p-6 flex items-center justify-center flex-col space-y-5 appear-on-scroll">
+            <h1 class="text-4xl font-bold">Pre-Register</h1>
+            <div>
+                <div class="card">
+                <div class="card__border"></div>
+                <div class="card_title__container">
+                    <span class="card_title">Why Pre-Register?</span>
+                </div>
+                <hr class="line" />
+                <ul class="card__list">
+                    <li class="card__list_item">
+                    <span class="check">
+                        <svg
+                        class="check_svg"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path
+                            clip-rule="evenodd"
+                            d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                            fill-rule="evenodd"
+                        ></path>
+                        </svg>
+                    </span>
+                    <span class="list_text">Be the first to know about upcoming events and exclusive offers</span>
+                    </li>
+                    <li class="card__list_item">
+                    <span class="check">
+                        <svg
+                        class="check_svg"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path
+                            clip-rule="evenodd"
+                            d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                            fill-rule="evenodd"
+                        ></path>
+                        </svg>
+                    </span>
+                    <span class="list_text">Be the first to know about upcoming events and exclusive offers.</span>
+                    </li>
+                    <li class="card__list_item">
+                        <span class="check">
+                            <svg
+                            class="check_svg"
+                            fill="currentColor"
+                            viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg"
+                            >
+                            <path
+                                clip-rule="evenodd"
+                                d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                                fill-rule="evenodd"
+                            ></path>
+                            </svg>
+                        </span>
+                        <span class="list_text">Get priority support and a seamless booking experience</span>
+                    </li>
+                </ul>
+                <!-- <button class="button">Pre-Register Now</button> -->
+                </div>
+            </div>
+          </section>
+
+          <section id="who-we-are" class="mt-[25px] mb-[25px] appear-on-scroll hand-containedr min-h-[400px] p-6 flex flex-col items-center justify-center bg-bukit-violet/1 space-y-5">
+            <h1 class="stagger-item text-4xl font-bold animate__animated animate__fadeInUp">Who We Are?</h1>
+            <div class="p-2 lead-2 text-lg font-normal text-justify animate__fadeIn">
+                <p>At our core, Bukit is powered by <b>PASSION</b>—Passion for events, Passion for technology, and Passion for creating connections. We are a team of creators, dreamers, and doers who believe that <b>every event is an experience waiting to happen</b>. Our platform is designed to make sure that, from the moment you discover an event to the second you step through the door, the experience is smooth, exciting, and completely stress-free.</p>
+            </div>
+          </section>
+
+          <section id="what-we-do" class="mt-[25px] mb-[25px] min-h-[400px] p-6 flex flex-col items-center justify-center space-y-5">
+            <h1 class="text-4xl font-bold text-center">What We Do?</h1>
+            <div class="what p-2 lead-2 text-lg font-normal text-justify">
+                <div>
+                    <!-- <img src="./assets/images/who.png" alt="" class="what-img rounded-lg"/>  -->
+                </div>
+                <!-- <br> -->
+                <p class="text-bold text-center block mx-auto">At Bukit, we have made it our mission to</p>
+                <br>
+                <div class="what-cards flex flex-row justify-evenly flex-wrap items-center">
+                    <div class="cards red p-2">
+                        <p class="tip font-power font-medium">Simplify ticketing </p>
+                        <p class="second-text text-xs font-light">For every kind of event—from mega concerts to intimate gatherings</p>
+                    </div>
+                    <div class="cards blue p-2">
+                        <p class="tip font-power font-medium">Help event organizers</p>
+                        <p class="second-text text-xs font-light">To manage and promote their events easily</p>
+                    </div>
+                    <div class="cards green p-2">
+                        <p class="tip font-power font-medium">Connect audiences</p>
+                        <p class="second-text text-xs font-light">With the experiences they love, whether it's live performances, sports events, or movie premieres</p>
+                    </div>
+                </div>
+                <br>
+                <p class="text-center block mx-auto">We connect organizers with audiences and make ticketing stress-free, so the focus stays where it belongs—on creating amazing experiences.</p>
+            </div>
+          </section>
+
+
+          <section class="mt-[25px] mb-[25px] bukit-intro min-h-[400px] p-6 flex items-center justify-center flex-col space-y-5">
+            <h1 class="text-4xl font-bold">Why Choose Bukit?</h1>
+            <div class="p-2 lead-2 text-lg font-normal text-justify">
+                <p>Because when you choose Bukit, you are choosing more than just a ticket—you are choosing to be part of a community that celebrates life’s greatest moments. We impact your life by bringing you closer to the events you love. We use AI technology to understand your interests and customize our suggestions as per your needs. We blend <b>technology</b> and <b>creativity</b> to offer you a platform where exploring and booking events is part of the experience itself. So, whether you’re an organizer creating the next must-see event or an attendee looking for your next adventure, Bukit is here to turn those plans into memories that last a lifetime.</p>
+                <br>
+                <p>And it doesn’t stop there! By following us on social media platforms like Instagram, Facebook, and Twitter, we keep you in the loop with updates, and we love to give back to our community with exciting giveaways! You could win tickets for free or at a discounted price, making your experience with Bukit even more rewarding.
+                </p>
+            </div>
+          </section>
+
+          <section class="mt-[25px] mb-[25px] bukit-intro min-h-[400px] p-6 flex items-center justify-center flex-col space-y-5">
+            <h1 class="text-4xl font-bold">What We Believe?</h1>
+            <span>The Magic of Moments</span>
+            <div class="p-2 lead-2 text-lg font-normal text-justify">
+                <p>We believe in the magic of shared experiences. Events are about more than just attending—they’re about <b>connection, emotion, and memory-making</b>. We want to make booking an event as exciting as <b>being at the event itself!</b> Our motto is simple: <b>Book Tickets Easier and Create Memories Forever</b>. We want to be there for every event, no matter how big or small, making sure that each one is <b>quick, memorable, and packed with energy</b>.</p>
+                <br>
+                <p>We’re dreaming big. Our vision is to become the go-to platform for event creators around the world, powered by <b>Advanced AI</b> and our sparking creativity. We see a future where every ticket purchased through Bukit lets you explore an incredible experience.
+                </p>
+                <br>
+                <p class="text-center">Team Bukit welcomes you! Let’s create memories that you'll never forget!</p>
+            </div>
+          </section>
+    </main>
+
+    <div class="fab-container">
+        <a href="#hero" class="up-button">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.14645 2.14645C7.34171 1.95118 7.65829 1.95118 7.85355 2.14645L11.8536 6.14645C12.0488 6.34171 12.0488 6.65829 11.8536 6.85355C11.6583 7.04882 11.3417 7.04882 11.1464 6.85355L8 3.70711L8 12.5C8 12.7761 7.77614 13 7.5 13C7.22386 13 7 12.7761 7 12.5L7 3.70711L3.85355 6.85355C3.65829 7.04882 3.34171 7.04882 3.14645 6.85355C2.95118 6.65829 2.95118 6.34171 3.14645 6.14645L7.14645 2.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </a>
+    </div>
+
+    <footer class="bg-[#8F00FF] text-white py-8">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-center items-center">
+            <!-- <div class="mb-4 md:mb-0">
+              <p class="text-lg font-medium">To Book Events: <a href="https://www.bukitnow.sg" class="underline hover:text-purple-200 transition-colors duration-300">www.bukitnow.sg</a></p>
+            </div> -->
+            <div class="flex space-x-4">
+              <a href="https://www.instagram.com/bukit.sg/" target="_blank" aria-label="Instagram" class="hover:text-purple-200 transition-colors duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61561794153603" target="_blank" aria-label="Facebook" class="hover:text-purple-200 transition-colors duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/bukitnow/" target="_blank" aria-label="LinkedIn" class="hover:text-purple-200 transition-colors duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="https://x.com/Bukit_with_us" target="_blank" aria-label="X" class="hover:text-purple-200 transition-colors duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="m18.9,1.153h3.682l-8.042,9.189,9.46,12.506h-7.405l-5.804-7.583-6.634,7.583H.469l8.6-9.831L0,1.153h7.593l5.241,6.931,6.065-6.931Zm-1.293,19.494h2.039L6.482,3.239h-2.19l13.314,17.408Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <p>&copy; 2024 Bukit. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+      
+      <script>
+        // Initialize Lenis
+        const lenis = new Lenis();
+
+        // Listen for the scroll event and log the event data
+        lenis.on('scroll', (e) => {
+        console.log(e);
+        });
+
+        // Use requestAnimationFrame to continuously update the scroll
+        function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        const hamMenu = document.querySelector('input[type="checkbox"]');
+        const menuContainer = document.querySelector('.menu-container');
+
+        hamMenu.addEventListener('click', () => {
+            menuContainer.classList.toggle('active')    
+        })
+        
+             const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            function handleIntersection(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animate the section container
+                        entry.target.classList.add('visible');
+                        
+                        // Find and animate all stagger items within the section
+                        const staggerItems = entry.target.querySelectorAll('.stagger-item');
+                        staggerItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.classList.add('visible');
+                            }, index * 200); // 200ms stagger between items
+                        });
+
+                        // Optional: Unobserve after animation
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }
+
+            const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+            // Observe all sections that should animate
+            document.querySelectorAll('.animate-section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Optional: Add scroll-linked animations for parallel effects
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                document.querySelectorAll('.scroll-parallel').forEach(element => {
+                    const speed = element.dataset.speed || 0.5;
+                    element.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+    </script>
+</body>
 </html>
-
