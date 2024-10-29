@@ -87,7 +87,9 @@
 <body>
     <nav class="h-[60px] z-50 fixed left-0 top-0 right-0 flex justify-between items-center bg-black/10 overflow-hidden p-2 backdrop-blur-sm bg-black/60 animate__animated animate__fadeInDown">
         <div class="logo-wrapper w-[80px]">
-            <img src="./assets/images/logo.png" alt="Bukit Logo" class="nav-logo">
+            <a href="./index.html">
+                <img src="./assets/images/logo.png" alt="Bukit Logo" class="nav-logo">
+            </a>
         </div>
         <div class="ham-container">
             <label class="hamburger animate__animated animate__fadeIn animate__delay-medium">
@@ -122,9 +124,11 @@
                     <div class="mb-6 animate__animated animate__fadeInUp animate__delay-short">
                         <img src="./assets/images/vj.jpeg" alt="Event image" class="w-full aspect-square object-cover rounded-md">
                     </div>
-                    <button class="glass-btn animate__animated animate__fadeInUp animate__delay-medium">
-                        Register now
-                    </button>
+                    <a href="./preregister.html">
+                        <button class="glass-btn animate__animated animate__fadeInUp animate__delay-medium">
+                            Register now
+                        </button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -308,15 +312,12 @@
       </footer>
       
       <script>
-        // Initialize Lenis
         const lenis = new Lenis();
 
-        // Listen for the scroll event and log the event data
         lenis.on('scroll', (e) => {
         console.log(e);
         });
 
-        // Use requestAnimationFrame to continuously update the scroll
         function raf(time) {
         lenis.raf(time);
         requestAnimationFrame(raf);
@@ -339,18 +340,15 @@
             function handleIntersection(entries, observer) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Animate the section container
                         entry.target.classList.add('visible');
                         
-                        // Find and animate all stagger items within the section
                         const staggerItems = entry.target.querySelectorAll('.stagger-item');
                         staggerItems.forEach((item, index) => {
                             setTimeout(() => {
                                 item.classList.add('visible');
-                            }, index * 200); // 200ms stagger between items
+                            }, index * 200);
                         });
 
-                        // Optional: Unobserve after animation
                         observer.unobserve(entry.target);
                     }
                 });
@@ -358,12 +356,10 @@
 
             const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-            // Observe all sections that should animate
             document.querySelectorAll('.animate-section').forEach(section => {
                 observer.observe(section);
             });
 
-            // Optional: Add scroll-linked animations for parallel effects
             window.addEventListener('scroll', () => {
                 const scrolled = window.scrollY;
                 document.querySelectorAll('.scroll-parallel').forEach(element => {
@@ -371,6 +367,15 @@
                     element.style.transform = `translateY(${scrolled * speed}px)`;
                 });
             });
+
+            window.addEventListener("scroll", function () {
+        const fab = document.querySelector(".fab-container");
+        if (window.scrollY > 200) { // Show when scrolled down 200px
+          fab.classList.add("visible");
+        } else {
+          fab.classList.remove("visible");
+        }
+      });
     </script>
 </body>
 </html>

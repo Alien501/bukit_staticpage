@@ -417,6 +417,16 @@ p {
   src: url('../assets/fonts/Sen.ttf');
 }
 
+@font-face {
+  font-family: 'Prestige';
+  src: url('../assets/fonts/Prestage\ Regular.otf');
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../assets/fonts/Lora-Regular.ttf');
+}
+
 b {
   font-size: 1rem;
 }
@@ -426,8 +436,8 @@ b {
 }
 
 h1 {
-  font-family: 'raleway' !important;
-  font-weight: 500;
+  font-family: 'Lora' !important;
+  font-weight: bold;
 }
 
 section div p {
@@ -484,10 +494,18 @@ section div p {
   border-radius: 50%;
   display: grid;
   place-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .up-button svg {
   display: block;
   width: 30px;
   height: 30px;
+}
+
+.fab-container.visible {
+  opacity: 1;
+  visibility: visible;
 }
