@@ -417,10 +417,20 @@ p {
   src: url('../assets/fonts/Sen.ttf');
 }
 
+@font-face {
+  font-family: 'Newake';
+  src: url('../assets/fonts/Newake.otf');
+}
+
+@font-face {
+  font-family: 'Maskolin';
+  src: url('../assets/fonts/Maskoolin.ttf');
+}
 
 .hero-text-container h1 {
-  font-family: 'Harmond' !important;
-  letter-spacing: .4rem;
+  font-family: 'Maskolin' !important;
+  letter-spacing: .1rem;
+  font-weight: 500;
 }
 
 .hero-text-container p {
